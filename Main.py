@@ -2,16 +2,21 @@
 # 9/17/2020
 # Nhan Tran
 
-from GameInfo import gameInfo
-from EventManager import eventManager
+from Source.GameInfo import gameInfo
+from Source.EventManager import eventManager
+from Source.FinalScore import displayFinalScore
+from Source.Style import style
+import os
 
 def main():
     while not gameInfo.isEnded:
         event = eventManager.getNewEvent();
         while not event.isEnded:
             event.displayTurn()
-            userInput = input(event.getInputMessage())
+            userInput = input(style.displayMessage("input", event.getInputMessage()))
             event.processUserInput(userInput)
+            os.system("cls")
+    displayFinalScore()
 
-if __name__ == "Main":
-    main()
+os.system("cls")
+main()

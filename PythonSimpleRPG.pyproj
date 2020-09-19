@@ -2,7 +2,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>6e486030-ea31-4d21-81c9-1deb811a35c2</ProjectGuid>
+    <ProjectGuid>99511b40-55cf-42e8-ad87-47366f2cbd41</ProjectGuid>
     <ProjectHome>.</ProjectHome>
     <StartupFile>Main.py</StartupFile>
     <SearchPath>
@@ -11,6 +11,7 @@
     <OutputPath>.</OutputPath>
     <Name>PythonSimpleRPG</Name>
     <RootNamespace>PythonSimpleRPG</RootNamespace>
+    <IsWindowsApplication>False</IsWindowsApplication>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,19 +22,28 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="EventManager.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Events\BaseEvent.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="GameInfo.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Main.py" />
+    <Compile Include="Source\EventManager.py" />
+    <Compile Include="Source\Events\BaseEvent.py" />
+    <Compile Include="Source\Events\ChooseWeaponEvent.py" />
+    <Compile Include="Source\FinalScore.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\GameInfo.py" />
+    <Compile Include="Source\Player.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\Style.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Source\Weapons\Attacks.py" />
+    <Compile Include="Source\Weapons\Effects.py" />
+    <Compile Include="Source\Weapons\Weapons.py" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Events\" />
+    <Folder Include="Source\Events\" />
+    <Folder Include="Source\" />
+    <Folder Include="Source\Weapons\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in

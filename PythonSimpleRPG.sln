@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30413.136
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonSimpleRPG", "PythonSimpleRPG.pyproj", "{6E486030-EA31-4D21-81C9-1DEB811A35C2}"
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "PythonSimpleRPG", "PythonSimpleRPG.pyproj", "{99511B40-55CF-42E8-AD87-47366F2CBD41}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,13 +11,13 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{6E486030-EA31-4D21-81C9-1DEB811A35C2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{6E486030-EA31-4D21-81C9-1DEB811A35C2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{99511B40-55CF-42E8-AD87-47366F2CBD41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{99511B40-55CF-42E8-AD87-47366F2CBD41}.Release|Any CPU.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {432080BE-CF44-4B0A-B2C0-BEF23FE94087}
+		SolutionGuid = {DC49F190-8B7C-4E4B-8104-7666475B3BED}
 	EndGlobalSection
 EndGlobal
