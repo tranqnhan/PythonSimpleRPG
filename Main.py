@@ -11,11 +11,16 @@ import os
 def main():
     while not gameInfo.isEnded:
         event = eventManager.getNewEvent();
-        while not event.isEnded:
-            event.displayTurn()
-            userInput = input(style.displayMessage("input", event.getInputMessage()))
-            event.processUserInput(userInput)
+        if event != None:
+            while not event.isEnded:
+                event.displayTurn()
+                userInput = input(style.displayMessage("input", event.getInputMessage()))
+                event.processUserInput(userInput)
+                os.system("cls")
+        else:
             os.system("cls")
+            break
+        os.system("cls")
     displayFinalScore()
 
 os.system("cls")

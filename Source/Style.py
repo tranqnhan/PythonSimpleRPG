@@ -29,11 +29,11 @@ class Style:
             newMessage = "\t" + message
             print(newMessage)
         elif type == "input":
-            newMessage = "\n :: " + message + ": "
+            newMessage = " :: " + message + " > "
             return self.color["GREEN"] + newMessage + self.color["END"]
         elif type == "command":
-            newMessage = "\n > " + message
-            print(self.color["DARKCYAN"] + newMessage + self.color["END"] + "\n")
+            newMessage = " > " + message
+            print(self.color["CYAN"] + newMessage + self.color["END"])
         else:
             print(message)
 

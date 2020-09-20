@@ -17,12 +17,15 @@ class BaseEvent:
     # The inherited method should call the base method to check the userInput.
     # Return true if input is a valid input, false otherwise.
     def processUserInput(self, userInput):
+        print("No process implemented!")
+
+    def isValidNumber(self, userInput, min, max):
         try:
             int(userInput)
         except ValueError:
             return False
         number = int(userInput)
-        if number >= 1 and number <= len(self.currentTurn.optionMessages):
+        if number >= min and number <= max:
             return True
         return False
 

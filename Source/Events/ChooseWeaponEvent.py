@@ -4,14 +4,14 @@
 
 from Source.Events.BaseEvent import BaseEvent, TurnData
 from Source.GameInfo import gameInfo
-from Source.Weapons.Weapons import *
+from Source.Weapons.Weapons import Bow, Sword, Staff
 from Source.Style import style
 
 class ChooseWeaponEvent(BaseEvent):
     def __init__(self):
         super().__init__()
-        self.chooseWeaponTurnData = TurnData("Choose a weapon: ", 
-                                             "Input a number (1, 2, 3) to choose a weapon",
+        self.chooseWeaponTurnData = TurnData("Choose a weapon", 
+                                             "Input a number 1, 2, or 3 to choose a weapon",
                                              ["1. Sword", "2. Bow", "3. Staff"])
         self.currentTurn = self.chooseWeaponTurnData
     
@@ -26,7 +26,7 @@ class ChooseWeaponEvent(BaseEvent):
         return self.chooseWeaponTurnData.inputMessage
 
     def processUserInput(self, userInput):
-        if (not super().processUserInput(userInput)):
+        if (not super().isValidNumber(userInput, 1, len(self.chooseWeaponTurnData.optionMessages))):
             self.chooseWeaponTurnData.inputMessage = "Please enter a valid number 1, 2, or 3"
         else:
             choice = int(userInput)

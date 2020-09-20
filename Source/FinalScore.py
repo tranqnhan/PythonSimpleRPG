@@ -4,9 +4,10 @@ from Source.Style import style
 # Final Score = Health + Exp + Coins * 2
 def displayFinalScore():
     style.displayMessage("title", "Game Over")
-    print("\n\tWeapon: ", gameInfo.player.weapon.name)
-    print("\tFinal Health: ", gameInfo.player.health)
-    print("\tFinal Coins: ", gameInfo.player.coins)
-    print("\tFinal Experience: ", gameInfo.player.exp)
-    print("\tFinal Score: ", gameInfo.player.health + gameInfo.player.coins * 2 + gameInfo.player.exp)
-    print("\nThank you for playing!\n")
+    print("\n\tWeapon:", gameInfo.player.weapon.name)
+    print("\tArea:", gameInfo.area.name)
+    print("\tFinal Health:", gameInfo.player.health)
+    print("\tFinal Coins:", gameInfo.player.coins)
+    print("\tFinal Experience:", gameInfo.player.exp)
+    print("\tFinal Score:", gameInfo.player.health + gameInfo.player.coins * 2 + gameInfo.player.exp)
+    print("\nThank you for playing!")

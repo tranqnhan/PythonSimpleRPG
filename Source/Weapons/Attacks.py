@@ -57,12 +57,12 @@ class QuickShot:
             return [self.damage, Bleeding(.15)]
         return [self.damage, None]
 
-# Power Shot - Damage: 12 - Hit Chance: 40% - Move Cost: 2
+# Power Shot - Damage: 12 - Hit Chance: 50% - Move Cost: 2
 class PowerShot:
     def __init__(self):
         self.name = "Power Shot"
         self.damage = 12
-        self.hitChance = .4
+        self.hitChance = .5
         self.moveCost = 2
         self.effect = None
 
@@ -76,7 +76,7 @@ class RainOfArrows:
         self.damage = 7
         self.hitChance = .7
         self.moveCost = 3
-        self.affliction = None
+        self.effect = None
 
     def attack(self):
         return [self.damage, None]
