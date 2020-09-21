@@ -1,4 +1,4 @@
-# PythonSimpleRPG
+# Python Simple RPG
 This is a game project for Indian Hills Community College's Python class
 
 # How to Run
