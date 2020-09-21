@@ -36,7 +36,6 @@ class StealEvent(BaseEvent):
                 style.displayMessage("command", "You have " + str(gameInfo.player.coins) + " coin(s) remaining")
             else:
                 style.displayMessage("command", "The " + self.enemy.name + " tries to fight back!")
-        print(self.choice)
 
     def getInputMessage(self):
         return self.currentTurn.inputMessage

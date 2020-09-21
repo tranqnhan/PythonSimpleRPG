@@ -19,7 +19,7 @@ class Bandit:
         self.minimumDamage = 5
         self.maximumDamage = 12
         self.coinsDrop = 25
-        self.expDrop = 5
+        self.expDrop = 4
         self.enemyType = "Fight"
 
 # Serial Killer - Health: 30  - Damage: (9 - 14) - Coin: 10 - Exp: + 7
@@ -48,7 +48,7 @@ class CorruptedKnight:
 
 # ----- Mountain Enemies -----
 
-# Salamander - Health: 15 - Damage (2 - 6) - Coins: 5 - Exp: + 2 - Appear Chance Weight: .5
+# Salamander - Health: 15 - Damage (2 - 6) - Coins: 5 - Exp: + 2
 class Salamander:
     def __init__(self):
         self.name = "Salamander"
@@ -59,7 +59,7 @@ class Salamander:
         self.expDrop = 2
         self.enemyType = "Steal"       
 
-# Drake - Health: 30 - Damage (7 - 10) - Coins: 20 - Exp: + 5 - Appear Chance Weight: .5
+# Drake - Health: 30 - Damage (7 - 10) - Coins: 20 - Exp: + 5
 class Drake:
    def __init__(self):
         self.name = "Drake"
@@ -68,10 +68,9 @@ class Drake:
         self.maximumDamage = 10
         self.coinsDrop = 20
         self.expDrop = 5
-        self.appearChance = .5
         self.enemyType = "Fight"
 
-# Mountain Lion - Health: 35 - Damage (9 - 15) - Coins: 30 - Exp: + 9 - Appear Chance Weight: .5
+# Mountain Lion - Health: 35 - Damage (9 - 15) - Coins: 30 - Exp: + 9
 class MountainLion:
    def __init__(self):
         self.name = "Mountain Lion"
@@ -79,8 +78,7 @@ class MountainLion:
         self.minimumDamage = 9
         self.maximumDamage = 15
         self.coinsDrop = 30
-        self.expDrop = 6
-        self.appearChance = .5
+        self.expDrop = 9
         self.enemyType = "Fight"
 
 # Boss
@@ -93,12 +91,11 @@ class DragonQueen:
         self.maximumDamage = 45
         self.coinsDrop = 50
         self.expDrop = 20
-        self.appearChance = 0
         self.enemyType = "Fight"
 
 # ----- Forest Enemies -----
 
-# Goblin - Health: 20 - Damage: (5 - 10) - Coins: 5 - Exp: + 2 - Appear Chance Weight: .3
+# Goblin - Health: 20 - Damage: (5 - 10) - Coins: 5 - Exp: + 2 
 class Goblin:
    def __init__(self):
         self.name = "Goblin"
@@ -109,7 +106,7 @@ class Goblin:
         self.expDrop = 2
         self.enemyType = "Steal"
 
-# Troll - Health: 35 - Damage: (2 - 27) - Coins: 25 - Exp: + 7 - Appear Chance Weight: .7
+# Troll - Health: 35 - Damage: (2 - 27) - Coins: 25 - Exp: + 7
 class Troll:
    def __init__(self):
         self.name = "Troll"
@@ -118,10 +115,9 @@ class Troll:
         self.maximumDamage = 27
         self.coinsDrop = 25
         self.expDrop = 7
-        self.appearChance = .7
         self.enemyType = "Fight"
 
-# Naga - Health: 60 - Damage: (2 - 15) - Coins: 30 - Exp: + 6 - Appear Chance Weight: .5
+# Naga - Health: 60 - Damage: (2 - 15) - Coins: 30 - Exp: + 6
 class Naga:
    def __init__(self):
         self.name = "Naga"
@@ -130,7 +126,6 @@ class Naga:
         self.maximumDamage = 15
         self.coinsDrop = 30
         self.expDrop = 6
-        self.appearChance = .5
         self.enemyType = "Fight"
 
 # Boss
@@ -139,8 +134,8 @@ class OrcKing:
     def __init__(self):
         self.name = "Orc King"
         self.health = 1000
-        self.minimumDamage = 3
-        self.maximumDamage = 10
+        self.minimumDamage = 30
+        self.maximumDamage = 70
         self.coinsDrop = 50
         self.expDrop = 20
         self.appearChance = 0

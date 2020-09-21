@@ -116,7 +116,7 @@ class Pierce:
     def __init__(self):
         self.name = "Pierce"
         self.damage = 2
-        self.hitChance = 1
+        self.hitChance = .8
         self.moveCost = 1
         self.effect = Bleeding(.15)
 

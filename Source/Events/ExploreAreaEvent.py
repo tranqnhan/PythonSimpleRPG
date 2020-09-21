@@ -4,7 +4,7 @@
 
 from Source.Events.BaseEvent import BaseEvent, TurnData
 from Source.GameInfo import gameInfo
-from Source.Locations.Areas import Village
+from Source.Locations.Areas import Village, Forest, Mountain
 from Source.Style import style
 
 class ExploreAreaEvent(BaseEvent):

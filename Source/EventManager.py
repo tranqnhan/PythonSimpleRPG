@@ -31,6 +31,7 @@ class EventManager:
                 elif enemy.enemyType == "Fight":
                     return BattleEvent(enemy)
             else:
+                gameInfo.area.numberOfFights += 1
                 return BattleEvent(gameInfo.area.getBoss())
         else:
             #No more events

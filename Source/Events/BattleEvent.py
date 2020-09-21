@@ -13,7 +13,7 @@ class BattleEvent(BaseEvent):
         super().__init__()
 
         self.enemy = enemy
-        self.gain = {"Health": self.enemy.health, "Coins": self.enemy.coinsDrop, "Exp": self.enemy.expDrop}
+        self.gain = {"Health": self.enemy.health // 2, "Coins": self.enemy.coinsDrop, "Exp": self.enemy.expDrop}
 
         self.enemyCastEffect = None
         self.playerWeapon = gameInfo.player.weapon
@@ -149,8 +149,8 @@ class BattleEvent(BaseEvent):
     def getAttackStatus(self, att):
         player = gameInfo.player
         if (att.effect == None):
-            return "{}: [Damage: {}] [Hit Chance: {}%] [Move Cost: {}]".format(att.name, player.exp + att.damage, att.hitChance * 100, att.moveCost)
-        return "{}: [Damage: {}] [Hit Chance: {}%] [Move Cost: {}] [Effect: {}] [Effect Cast Chance: {}%]".format(att.name,  player.exp + att.damage, att.hitChance * 100, att.moveCost, att.effect.name, att.effect.successChance * 100)
+            return "{}: \n\t\t[Damage: {}] \n\t\t[Hit Chance: {}%] \n\t\t[Move Cost: {}]".format(att.name, player.exp + att.damage, att.hitChance * 100, att.moveCost)
+        return "{}: \n\t\t[Damage: {}] \n\t\t[Hit Chance: {}%] \n\t\t[Move Cost: {}] \n\t\t[Effect: {}] \n\t\t[Effect Cast Chance: {}%]".format(att.name,  player.exp + att.damage, att.hitChance * 100, att.moveCost, att.effect.name, att.effect.successChance * 100)
 
     def getEnemyStatus(self):
         return "{}: [Health: {}] [Min Damage: {}] [Max Damage: {}]".format(self.enemy.name, self.enemy.health, self.enemy.minimumDamage, self.enemy.maximumDamage)

@@ -2,6 +2,9 @@
 # 9/17/2020
 # Nhan Tran
 
+# Developer Note: Use Windows Command Prompt and type in "python Main.py" for better format! 
+# It works in Visual Studio but for some reason the colors did not show up.
+
 from Source.GameInfo import gameInfo
 from Source.EventManager import eventManager
 from Source.FinalScore import displayFinalScore
