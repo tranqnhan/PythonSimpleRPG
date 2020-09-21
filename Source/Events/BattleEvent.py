@@ -40,28 +40,9 @@ class BattleEvent(BaseEvent):
         elif self.state == "DisplayHit":
             self.currentTurn = self.hitData
             self.displayHit()
-
-            if self.enemyCastEffect != None:
-                if self.enemyCastEffect.turnRemaining > 0:
-                    self.enemyCastEffect.turnRemaining -= 1
-                    damage = self.enemyCastEffect.damage
-                    self.enemy.health = max(self.enemy.health - damage, 0)
-                    style.displayMessage("command", "{} took {} damage because of the {}!".format(self.enemy.name, damage, self.enemyCastEffect.name))
-                else:
-                    self.enemyCastEffect = None
+            self.processEnemyEffect()
         elif self.state == "DisplayWinner":
-            self.currentTurn = self.hitData
-            if self.enemy.health <= 0:
-                style.displayMessage("command", "{} died!".format(self.enemy.name))
-                style.displayMessage("command", "You gained {} health, {} coins, and {} experience!".format(self.gain["Health"], self.gain["Coins"], self.gain["Exp"]))
-                player = gameInfo.player
-                player.health += self.gain["Health"]
-                player.coins += self.gain["Coins"]
-                player.exp += self.gain["Exp"]
-            else:
-                style.displayMessage("command", "You died!")
-                gameInfo.isEnded = True
-            self.isEnded = True
+            self.signalEndBattleEvent()
 
     def getInputMessage(self):
         return self.currentTurn.inputMessage
@@ -87,6 +68,16 @@ class BattleEvent(BaseEvent):
         self.previousTurnHit["Effect"] = None
         self.previousTurnHit["Miss"] = False
         self.state = "DisplayHit"
+
+    def processEnemyEffect(self):
+        if self.enemyCastEffect != None:
+            if self.enemyCastEffect.turnRemaining > 0:
+                self.enemyCastEffect.turnRemaining -= 1
+                damage = self.enemyCastEffect.damage
+                self.enemy.health = max(self.enemy.health - damage, 0)
+                style.displayMessage("command", "{} took {} damage because of the {}!".format(self.enemy.name, damage, self.enemyCastEffect.name))
+            else:
+                self.enemyCastEffect = None
 
     def playerFightTurn(self, userInput):
         if (not super().isValidNumber(userInput, 1, len(self.currentTurn.optionMessages))):
@@ -121,10 +112,23 @@ class BattleEvent(BaseEvent):
             
             self.fightData.inputMessage = "Input a number to choose an attack that is <= the move cost remaining" 
         
+    def signalEndBattleEvent(self):
+        self.currentTurn = self.hitData
+        if self.enemy.health <= 0:
+            style.displayMessage("command", "{} died!".format(self.enemy.name))
+            style.displayMessage("command",  gameInfo.player.name + " gained {} health, {} coins, and {} experience!".format(self.gain["Health"], self.gain["Coins"], self.gain["Exp"]))
+            player = gameInfo.player
+            player.health += self.gain["Health"]
+            player.coins += self.gain["Coins"]
+            player.exp += self.gain["Exp"]
+        else:
+            style.displayMessage("command", gameInfo.player.name + " died!")
+            gameInfo.isEnded = True
+        self.isEnded = True
 
     def displayBattle(self):
         if (self.turnNumber == 0):
-            style.displayMessage("command", "You have encountered a " + self.enemy.name)
+            style.displayMessage("command", gameInfo.player.name + " have encountered a " + self.enemy.name)
         self.fightData.eventMessage = self.getEnemyStatus()
         style.displayMessage("command", self.fightData.eventMessage)
         numberOfOptions = len(self.fightData.optionMessages)

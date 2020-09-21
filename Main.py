@@ -1,8 +1,13 @@
 # This is a game project name Python Simple RPG for Indian Hills Community College's Python class
-# 9/17/2020
 # Nhan Tran
+# 9/17/2020
 
-# Developer Note: Use Windows Command Prompt and type in "python Main.py" for better format! 
+
+# Developer Note: 
+# Run Windows Command Prompt, 
+# navigate to the location where Main.py file is stored, 
+# and then type in the Command Prompt "python Main.py" for better format! 
+
 # It works in Visual Studio but for some reason the colors did not show up.
 
 from Source.GameInfo import gameInfo

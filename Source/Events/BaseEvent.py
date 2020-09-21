@@ -13,22 +13,21 @@ class BaseEvent:
     def getInputMessage(self):
         print("No input message implemented!")
 
-    # The base method tries to check whether the userInput is a valid integer input.
-    # The inherited method should call the base method to check the userInput.
-    # Return true if input is a valid input, false otherwise.
     def processUserInput(self, userInput):
         print("No process implemented!")
 
+        
+    # This method tries to check whether the userInput is a valid integer input.
+    # The inherited method should call this method to check the userInput.
+    # Return true if input is a valid input, false otherwise.
     def isValidNumber(self, userInput, min, max):
         try:
             int(userInput)
         except ValueError:
             return False
         number = int(userInput)
-        if number >= min and number <= max:
-            return True
-        return False
 
+        return number >= min and number <= max
 
 #Storing a single turn display data
 class TurnData:

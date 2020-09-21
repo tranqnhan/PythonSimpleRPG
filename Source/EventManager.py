@@ -1,7 +1,10 @@
+# Event manager decides which event is going to happen next
+
 from Source.Events.ChooseWeaponEvent import ChooseWeaponEvent
 from Source.Events.ExploreAreaEvent import ExploreAreaEvent
 from Source.Events.StealEvent import StealEvent
 from Source.Events.BattleEvent import BattleEvent
+from Source.Events.NameEvent import NameEvent
 
 from Source.EventQueue import EventQueue
 from Source.Locations.Enemies import *
@@ -20,8 +23,10 @@ class EventManager:
             EventQueue.QUEUE = None
             return temp
         elif self.eventNumber == 1:
-            return ChooseWeaponEvent()
+            return NameEvent()
         elif self.eventNumber == 2:
+            return ChooseWeaponEvent()
+        elif self.eventNumber == 3:
             return ExploreAreaEvent()
         elif gameInfo.area != None and gameInfo.area.numberOfFights < 9:
             if gameInfo.area.numberOfFights < 8:
