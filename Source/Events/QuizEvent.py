@@ -45,7 +45,6 @@ class QuizEvent(BaseEvent):
             style.displayMessage("command", gameInfo.player.name + " is wrong!")
             style.displayMessage("command", gameInfo.player.name + " lost " + str(self.currentTurnData.punishmentCount) + " " + self.currentTurnData.punishmentType)
             self.inputMessage = "Press Enter to continue"
-            print(gameInfo.player.health, self.currentTurnData.punishmentCount)
             self.isEnded = True
             self.checkPlayerHealth()
 

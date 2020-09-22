@@ -32,9 +32,6 @@
     <Compile Include="Source\Events\NameEvent.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Source\Events\QuizData.py">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="Source\Events\QuizEvent.py">
       <SubType>Code</SubType>
     </Compile>
