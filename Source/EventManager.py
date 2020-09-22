@@ -10,6 +10,9 @@ from Source.EventQueue import EventQueue
 from Source.Locations.Enemies import *
 from Source.GameInfo import gameInfo
 from Source.Style import style
+from Source.Events.QuizEvent import getRandomQuiz
+import random
+
 class EventManager:
     def __init__(self):
         self.eventNumber = 0
@@ -29,6 +32,9 @@ class EventManager:
         elif self.eventNumber == 3:
             return ExploreAreaEvent()
         elif gameInfo.area != None and gameInfo.area.numberOfFights < 9:
+            if random.randint(1, 5) == 2:
+                return getRandomQuiz()
+
             if gameInfo.area.numberOfFights < 8:
                 enemy = gameInfo.area.getEnemy()
                 if enemy.enemyType == "Steal":

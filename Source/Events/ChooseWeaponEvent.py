@@ -18,9 +18,8 @@ class ChooseWeaponEvent(BaseEvent):
     def displayTurn(self):
         style.displayMessage("title", "Choose Weapon Event")
         style.displayMessage("command", self.chooseWeaponTurnData.eventMessage)
-        numberOfOptions = len(self.chooseWeaponTurnData.optionMessages)
-        for i in range(0, numberOfOptions):
-            style.displayMessage("choice", self.chooseWeaponTurnData.optionMessages[i])
+        for option in self.chooseWeaponTurnData.optionMessages:
+            style.displayMessage("choice", option)
     
     def getInputMessage(self):
         return self.chooseWeaponTurnData.inputMessage
