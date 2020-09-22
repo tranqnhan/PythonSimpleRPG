@@ -1,6 +1,10 @@
 # Python Simple RPG
 This is a game project for Indian Hills Community College's Python class
 
+## Sample Images
+<img align="left" src="https://github.com/tranqnhan/PythonSimpleRPG/blob/master/Images/Sample1.PNG">
+<img align="left" src="https://github.com/tranqnhan/PythonSimpleRPG/blob/master/Images/Sample2.PNG">
+
 # How to Run
 ## Command Prompt (Recommended)
 Use the Windows Command Prompt - Navigate to the Main.py file - Run python Main.py
