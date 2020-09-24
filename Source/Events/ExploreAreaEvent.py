@@ -12,15 +12,16 @@ class ExploreAreaEvent(BaseEvent):
         super().__init__()
         self.exploreAreaTurnData = TurnData("Explore an area", 
                                              "Input a number to choose an area",
-                                             ["1. Village", "2. Forest", "3. Mountain"])
+                                             ["Village", "Forest", "Mountain"])
         self.currentTurn = self.exploreAreaTurnData
     
     def displayTurn(self):
         style.displayMessage("title", "Explore An Area Event")
         style.displayMessage("command", self.exploreAreaTurnData.eventMessage)
-        numberOfOptions = len(self.exploreAreaTurnData.optionMessages)
-        for i in range(0, numberOfOptions):
-            style.displayMessage("choice", self.exploreAreaTurnData.optionMessages[i])
+
+        options = self.exploreAreaTurnData.optionMessages
+        for i in range(len(options)):
+            style.displayMessage("choice", str(i+1) + ". " + options[i])
     
     def getInputMessage(self):
         return self.exploreAreaTurnData.inputMessage

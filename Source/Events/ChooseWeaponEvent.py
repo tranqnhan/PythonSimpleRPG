@@ -12,14 +12,16 @@ class ChooseWeaponEvent(BaseEvent):
         super().__init__()
         self.chooseWeaponTurnData = TurnData("Choose a weapon", 
                                              "Input a number 1, 2, or 3 to choose a weapon",
-                                             ["1. Sword", "2. Bow", "3. Staff"])
+                                             ["Sword", "Bow", "Staff"])
         self.currentTurn = self.chooseWeaponTurnData
     
     def displayTurn(self):
         style.displayMessage("title", "Choose Weapon Event")
         style.displayMessage("command", self.chooseWeaponTurnData.eventMessage)
-        for option in self.chooseWeaponTurnData.optionMessages:
-            style.displayMessage("choice", option)
+
+        options = self.chooseWeaponTurnData.optionMessages
+        for i in range(len(options)):
+            style.displayMessage("choice", str(i+1) + ". " + options[i])
     
     def getInputMessage(self):
         return self.chooseWeaponTurnData.inputMessage
