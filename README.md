@@ -8,4 +8,5 @@ Use the Windows Command Prompt - Navigate to the Main.py file - Run python Main.
 You can also download the entire solution an run it in Visual Studio. However, the colors and some formatting may not appear.
 
 ## Build With
-- Python - Programming language
+- Python - Programming Language
+- Visual Studio - IDE
